@@ -12,7 +12,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'should render the correct text in the show template' do
-      expect(response.body).to include('This is the posts/index view')
+      expect(response.body).to include('Here is a list of posts for all users')
     end
   end
 
@@ -28,7 +28,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'should render the correct text in the show template' do
-      expect(response.body).to include('This is the posts/show view')
+      expect(response.body).to include('Here is a list of posts for all users')
     end
   end
 end
