@@ -52,7 +52,7 @@ RSpec.describe Post, type: :model do
     it 'Should update the author\'s posts_counter' do
       post = Post.create(author: User.first, title: 'Hello', text: 'This is my post')
 
-      expect(post.author.posts_counter).to eq(post.author.posts.length)
+      expect(post.author.update_posts_counter).to eq(post.author.posts.length)
     end
   end
 end

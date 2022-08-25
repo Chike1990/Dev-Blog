@@ -12,7 +12,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should render the correct text in the index template' do
-      expect(response.body).to include('Here is the users/index<')
+      expect(response.body).to include('Here is the users/index')
     end
   end
 
@@ -27,7 +27,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should render the correct text in the show template' do
-      expect(response.body).to include('User/show<')
+      expect(response.body).to include('User/show')
     end
   end
 end
