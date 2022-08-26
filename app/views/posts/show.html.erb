@@ -1,1 +1,18 @@
-<h1>Here is a list of posts for all users</h1>
+<h1>Here is a post by a user plus comments</h1>
+ <!-- Posts_with_comments -->
+<div class="post_with_comment_container">
+    <div class="post_by_username">
+        <h3><%= @post.title %> by: <%= @user.name %></h3>
+        <p class="comments_likes">Comments <%= @post.comments_counter %>, Likes <%= @post.likes_counter %></h5>
+    </div>
+
+    <div class="post_body">
+        <p><%= @post.text %></p>
+    </div>
+
+    <div class="10comments">
+        <% @comments.each do |comment| %>
+        <p><%= comment.author.name%>: <%= comment.text %></p>
+        <% end %>
+    </div>
+</div>

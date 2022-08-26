@@ -1,1 +1,21 @@
 <h1>Here is the users/index</h1>
+
+<div class="container">
+  <ul>
+  <% @users.each do |user| %>
+  <%= link_to user_path(user.id) do%>
+  <li>
+        <div class="user_card">
+            <div class="user_img">
+                <%= image_tag("https://robohash.org/#{user.id}.png", :alt => "#{user.name}'s profile photo") %> 
+            </div>
+            <div class="user_info">
+                <h1 class="username"><%= user.name %></h1>
+                <h4 class="number_of_post">Number of posts: <%= user.posts_counter %></h4>
+            </div>
+        </div>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
+</div>

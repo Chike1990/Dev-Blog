@@ -1,1 +1,37 @@
-<h1>User/show</h1>
+<h1>Show User</h1>
+
+ <div class="container">
+
+        <div class="user_card">
+            <div class="img">
+            <%= image_tag("https://robohash.org/#{@user.id}.png", :alt => "#{@user.name}'s profile photo") %> 
+            </div>
+            <div class="user_info">
+                <h1 class="username"><%= @user.name %></h1>
+                <h4 class="number_of_post">Number of posts: <%= @user.posts_counter %></h4>
+            </div>
+        </div>
+
+        <div class="bio">
+           <h3>Bio</h3>
+           <p class="bio_note"><%= @user.bio %></p>
+        </div>
+
+        <ul>
+        <% @user.most_recent_posts do |post| %>
+        <li>
+            <div class="posts">
+                <h3><%= post.title %></h3>
+                <p><%= post.text %></p>
+                <p class="comments_likes">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+             </div>
+        </li>
+        <% end %>
+        </ul>
+ 
+
+        <button>
+            <%= link_to "See all posts", user_posts_path(@user), {:class => "#"}%>
+        </button>
+
+    </div>

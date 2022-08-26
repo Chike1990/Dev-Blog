@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: antiquewhite;
+}
+
+ul {
+  list-style: none;
+}
+
+.user_card {
+  display: flex;
+  margin: 3px;
+}
+
+.img {
+  padding-right: 10rem;
+  border: 2px solid;
+  margin-right: 2rem;
+  width: 150px;
+}
+
+.user_info {
+  border: 2px solid;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3rem;
+}
+
+.username {
+  padding-left: 2rem;
+}
+
+.number_of_post {
+  padding-top: 2rem;
+  padding-right: 2rem;
+}
+
+.bio,
+.posts,
+.comments,
+.post_with_comment_container {
+  border: 2px solid;
+  padding: 3px 5px;
+  margin-bottom: 0.5rem;
+}
+
+.comments_likes {
+  padding-left: 41rem;
+}
+
+button {
+  margin-left: 50%;
+}
