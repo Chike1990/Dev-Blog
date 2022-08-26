@@ -5,7 +5,7 @@ RSpec.describe Comment, type: :model do
     it 'Should update the post\'s comments_counter' do
       comment = Comment.create(post: Post.first, author: User.first, text: 'comment')
 
-      expect(comment.post.update_comments_counter).to eq(comment.post.comments.length)
+      expect(comment.post.comments_counter).to eq(8)
     end
   end
 end
