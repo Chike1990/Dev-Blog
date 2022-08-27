@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comment.author_id = @user_id
     @comment.post_id = @post_id
     @comment.save
-    redirect_to user_post_path(@user_id, @post_id)
+    redirect_to user_post_path(params[:user_id], @post)
   end
 
   private
