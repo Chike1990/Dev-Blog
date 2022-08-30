@@ -19,6 +19,10 @@
                 <p><%= post.text %></p>
                 <p class="comments_likes">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
             </div>
+
+             <%= form_with url: "/users/#{@user.id}/posts/#{post.id}/likes", class: 'comments_counter' do |like| %>
+               <%= like.submit "Like Post", class: "button like_button"%>
+              <% end %>
             </ul>
 
             <div class="comments">
