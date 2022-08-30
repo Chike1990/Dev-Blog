@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = Post.all
+    @posts = @user.posts.order(id: :desc).limit(2).includes(:comments, comments: [:author])
   end
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments
+    @comments = @post.comments.includes(:author)
     @user = @post.author
   end
 
@@ -22,7 +22,13 @@ class PostsController < ApplicationController
       redirect_to user_post_path(params[:user_id], @post)
     else
       @user = User.find(params[:user_id])
-      render :new, status: :unprocessable_entity
+      render :new
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end
